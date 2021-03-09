@@ -47,7 +47,10 @@ PRODUCT_PACKAGES_DEBUG += l2test_ertm
 PRODUCT_PACKAGES_DEBUG += rfc
 
 ifeq ($(TARGET_SUPPORTS_WEAR_ANDROID),true)
+ifeq ($(TARGET_PRODUCT),sdm429w_law)
+PRODUCT_PACKAGES_DEBUG += wearos_ble_testapp
 PRODUCT_PACKAGES_DEBUG += wearos_bluetooth_rfcomm_testapp
+endif #TARGET_PRODUCT
 endif #TARGET_SUPPORTS_WEAR_ANDROID
 
 ifneq ($(TARGET_HAS_LOW_RAM), true)
