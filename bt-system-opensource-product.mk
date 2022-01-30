@@ -30,6 +30,9 @@ PRODUCT_PACKAGES += vendor.qti.hardware.btconfigstore@1.0
 PRODUCT_PACKAGES += vendor.qti.hardware.btconfigstore@2.0
 PRODUCT_PACKAGES += com.qualcomm.qti.bluetooth_audio@1.0
 PRODUCT_PACKAGES += vendor.qti.hardware.bluetooth_audio@2.0
+# bt offload related libs
+PRODUCT_PACKAGES += Bluetooth_Offload
+PRODUCT_PACKAGES += vendor.qti.hardware.bluetooth_offload@1.0
 
 ifeq ($(TARGET_USE_BT_DUN),true)
 PRODUCT_PACKAGES += vendor.qti.hardware.bluetooth_dun-V1.0-java
