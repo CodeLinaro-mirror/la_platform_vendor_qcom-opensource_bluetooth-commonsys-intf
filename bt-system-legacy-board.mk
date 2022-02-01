@@ -13,3 +13,7 @@ BOARD_HAVE_BLUETOOTH_QCOM := true
 
 #FM
 BOARD_HAVE_QCOM_FM := true
+ifeq ($(TARGET_PRODUCT),qssi_32go)
+#FM
+BOARD_HAVE_QCOM_FM := false
+endif
