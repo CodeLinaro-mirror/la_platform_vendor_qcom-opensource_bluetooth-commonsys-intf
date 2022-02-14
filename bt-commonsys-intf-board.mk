@@ -1,5 +1,7 @@
 #ANT
+ifneq ($(TARGET_BOARD_TYPE),auto)
 BOARD_ANT_WIRELESS_DEVICE := "qualcomm-hidl"
+endif
 
 #BT
 BOARD_HAVE_BLUETOOTH := true
