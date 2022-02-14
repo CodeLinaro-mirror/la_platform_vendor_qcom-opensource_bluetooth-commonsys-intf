@@ -59,6 +59,19 @@ PRODUCT_PACKAGES_DEBUG += BTTestApp
 PRODUCT_PACKAGES_DEBUG += BATestApp
 endif #TARGET_HAS_LOW_RAM
 
+ifneq ($(TARGET_PRODUCT),sdm429w)
+#adv audio
+SOONG_CONFIG_NAMESPACES += bredr_vs_btadva
+SOONG_CONFIG_bredr_vs_btadva += bredr_or_btadva
+ifneq "$(wildcard vendor/qcom/proprietary/commonsys/bt/bt_adv_audio)" ""
+    $(warning bt_adv_audio dir is present)
+    SOONG_CONFIG_bredr_vs_btadva_bredr_or_btadva := btadva
+else
+    $(warning bt_adv_audio dir is not present)
+    SOONG_CONFIG_bredr_vs_btadva_bredr_or_btadva := bredr
+endif #ifneq "$(wildcard vendor/qcom/proprietary/commonsys/bt/bt_adv_audio)" ""
+endif
+
 else
 PRODUCT_SOONG_NAMESPACES += packages/apps/Bluetooth
 PRODUCT_PACKAGE_OVERLAYS += vendor/qcom/opensource/commonsys-intf/bluetooth/overlay/generic
