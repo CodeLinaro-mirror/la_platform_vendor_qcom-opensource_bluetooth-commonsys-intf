@@ -18,3 +18,7 @@ ifneq ($(TARGET_USES_QMAA_OVERRIDE_FM),true)
 BOARD_HAVE_QCOM_FM := false
 endif
 endif
+
+ifeq ($(TARGET_SUPPORTS_WEAR_ANDROID),true)
+BOARD_HAVE_QCOM_FM := false
+endif
