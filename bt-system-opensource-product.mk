@@ -51,6 +51,7 @@ PRODUCT_PACKAGES_DEBUG += rfc
 
 ifeq ($(TARGET_SUPPORTS_WEAR_ANDROID),true)
 PRODUCT_PACKAGES_DEBUG += wearos_bluetooth_rfcomm_testapp
+PRODUCT_PACKAGES_DEBUG += BTProfileTestApp
 endif #TARGET_SUPPORTS_WEAR_ANDROID
 
 ifneq ($(TARGET_HAS_LOW_RAM), true)
