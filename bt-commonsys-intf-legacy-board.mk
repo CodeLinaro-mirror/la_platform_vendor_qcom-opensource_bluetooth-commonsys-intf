@@ -5,6 +5,10 @@ BOARD_HAVE_BLUETOOTH_QCOM := true
 #FM
 BOARD_HAVE_QCOM_FM := true
 
+ifeq ($(TARGET_1G_DDR_RAM), true)
+BOARD_HAVE_QCOM_FM := false
+endif
+
 ifneq ($(filter sdm660 msm8998, $(TARGET_BOARD_PLATFORM)),)
 BOARD_ANT_WIRELESS_DEVICE := "qualcomm-hidl"
 BOARD_HAS_QCA_FM_SOC := "cherokee"
