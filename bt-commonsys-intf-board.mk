@@ -10,6 +10,8 @@ ifeq ($(TARGET_BOARD_TYPE),auto)
 BOARD_HAVE_QCOM_FM := false
 else ifeq ($(TARGET_BOARD_AUTO),true)
 BOARD_HAVE_QCOM_FM := false
+else ifeq ($(TARGET_1G_DDR_RAM), true)
+BOARD_HAVE_QCOM_FM := false	
 else
 BOARD_HAVE_QCOM_FM := true
 endif

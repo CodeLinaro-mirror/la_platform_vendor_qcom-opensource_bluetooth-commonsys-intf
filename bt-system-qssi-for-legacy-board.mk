@@ -7,3 +7,9 @@ BOARD_HAVE_BLUETOOTH_QCOM := true
 
 #FM
 BOARD_HAVE_QCOM_FM := true
+
+#Disable FM for 1G ddr project.
+ifeq ($(TARGET_1G_DDR_RAM), true)
+BOARD_HAVE_QCOM_FM := false
+endif
+
