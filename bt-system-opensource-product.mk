@@ -14,6 +14,20 @@ endif #TARGET_FWK_SUPPORTS_FULL_VALUEADDS
 ifeq ($(BOARD_HAVE_BLUETOOTH_QCOM),true)
 PRODUCT_PACKAGES += Bluetooth
 
+ifneq ($(TARGET_BOARD_TYPE),auto)
+# Set supported Bluetooth profiles to enabled
+PRODUCT_PRODUCT_PROPERTIES += \
+    bluetooth.profile.gatt.enabled=true \
+    bluetooth.profile.hid.host.enabled=true \
+    bluetooth.profile.hid.device.enabled=true \
+    bluetooth.profile.map.server.enabled=true \
+    bluetooth.profile.opp.enabled=true \
+    bluetooth.profile.pan.nap.enabled=true \
+    bluetooth.profile.pan.panu.enabled=true \
+    bluetooth.profile.pbap.server.enabled=true \
+    bluetooth.profile.sap.server.enabled=true
+endif #TARGET_BOARD_TYPE
+
 ifeq ($(TARGET_FWK_SUPPORTS_FULL_VALUEADDS), true)
 ifneq ($(TARGET_BOARD_TYPE),auto)
 TARGET_USE_QTI_BT_STACK := true
