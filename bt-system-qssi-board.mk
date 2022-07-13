@@ -2,8 +2,8 @@
 BOARD_ANT_WIRELESS_DEVICE := "qualcomm-hidl"
 
 #BT
-BOARD_HAVE_BLUETOOTH := true
-BOARD_HAVE_BLUETOOTH_QCOM := true
+BOARD_HAVE_BLUETOOTH := false
+BOARD_HAVE_BLUETOOTH_QCOM := false
 
 #FM
 ifneq ($(TARGET_BOARD_TYPE),auto)
@@ -18,3 +18,5 @@ ifneq ($(TARGET_USES_QMAA_OVERRIDE_FM),true)
 BOARD_HAVE_QCOM_FM := false
 endif
 endif
+
+BOARD_HAVE_QCOM_FM := false
