@@ -15,7 +15,14 @@ BOARD_HAVE_QCOM_FM := true
 endif
 
 TARGET_USE_QTI_BT_CONFIGSTORE := true
+
+#BT_SAR
+ifeq ($(TARGET_BOARD_AUTO),true)
+TARGET_USE_QTI_BT_SAR := false
+else
 TARGET_USE_QTI_BT_SAR := true
+endif
+
 TARGET_USE_QTI_VND_FWK_DETECT := true
 TARGET_USE_BT_DUN := false
 
