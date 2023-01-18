@@ -12,6 +12,15 @@ endif
 endif
 endif #TARGET_USE_WEAR_QC_BT_STACK
 
+# for RfCommTestApp implementation
+SOONG_CONFIG_NAMESPACES += qc_bt_RfCommTestApp
+SOONG_CONFIG_qc_bt_RfCommTestApp += aosp_or_qc_bt_RfCommTestApp
+ifeq ($(TARGET_USE_WEAR_QC_BT_STACK),true)
+SOONG_CONFIG_qc_bt_RfCommTestApp_aosp_or_qc_bt_RfCommTestApp := enabled
+else
+SOONG_CONFIG_qc_bt_RfCommTestApp_aosp_or_qc_bt_RfCommTestApp := disabled
+endif
+
 #BT
 ifeq ($(BOARD_HAVE_BLUETOOTH_QCOM),true)
 PRODUCT_PACKAGES += Bluetooth
