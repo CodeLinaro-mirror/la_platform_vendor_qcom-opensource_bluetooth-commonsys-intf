@@ -23,6 +23,14 @@ else
 SOONG_CONFIG_qc_bt_RfCommTestApp_aosp_or_qc_bt_RfCommTestApp := disabled
 endif
 
+# for BletestApp implementation
+SOONG_CONFIG_NAMESPACES += qc_bt_BleTestApp
+SOONG_CONFIG_qc_bt_BleTestApp += qc_bt_enable_disable_BleTestApp
+ifeq ($(TARGET_USE_WEAR_QC_BT_STACK),true)
+SOONG_CONFIG_qc_bt_BleTestApp_qc_bt_enable_disable_BleTestApp := enabled
+else
+SOONG_CONFIG_qc_bt_BleTestApp_qc_bt_enable_disable_BleTestApp := disabled
+endif
 #BT
 ifeq ($(BOARD_HAVE_BLUETOOTH_QCOM),true)
 PRODUCT_PACKAGES += Bluetooth
