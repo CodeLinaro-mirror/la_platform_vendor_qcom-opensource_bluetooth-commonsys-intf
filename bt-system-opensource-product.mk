@@ -13,7 +13,7 @@ endif
 endif #TARGET_USE_WEAR_QC_BT_STACK
 
 PRODUCT_PACKAGES_DEBUG += wearos_bluetooth_rfcomm_testapp
-
+PRODUCT_PACKAGES_DEBUG += wearos_ble_testapp
 # for RfCommTestApp implementation
 SOONG_CONFIG_NAMESPACES += qc_bt_RfCommTestApp
 SOONG_CONFIG_qc_bt_RfCommTestApp += aosp_or_qc_bt_RfCommTestApp
