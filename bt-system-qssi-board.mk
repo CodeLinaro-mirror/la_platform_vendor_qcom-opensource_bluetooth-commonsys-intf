@@ -7,7 +7,11 @@ BOARD_HAVE_BLUETOOTH_QCOM := true
 
 #FM
 ifneq ($(TARGET_BOARD_TYPE),auto)
-BOARD_HAVE_QCOM_FM := true
+BOARD_HAVE_QCOM_FM := false
+endif
+
+ifeq ($(TARGET_1G_DDR_RAM), true)
+BOARD_HAVE_QCOM_FM := false
 endif
 
 ifeq ($(TARGET_USES_QMAA),true)
