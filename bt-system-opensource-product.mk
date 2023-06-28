@@ -10,6 +10,9 @@ PRODUCT_PACKAGES += com.dsi.ant@1.0
 endif
 endif #TARGET_FWK_SUPPORTS_FULL_VALUEADDS
 
+#FM
+BOARD_HAVE_QCOM_FM := false
+
 #BT
 ifeq ($(BOARD_HAVE_BLUETOOTH_QCOM),true)
 PRODUCT_PACKAGES += Bluetooth
@@ -66,6 +69,10 @@ BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := vendor/qcom/opensource/commonsys-
 endif #TARGET_FWK_SUPPORTS_FULL_VALUEADDS
 
 endif #BOARD_HAVE_BLUETOOTH_QCOM
+
+ifeq ($(TARGET_1G_DDR_RAM), true)
+BOARD_HAVE_QCOM_FM := false
+endif
 
 #FM
 ifeq ($(BOARD_HAVE_QCOM_FM), true)
