@@ -14,7 +14,7 @@ ifneq ($(filter msm8996, $(TARGET_BOARD_PLATFORM)),)
 #BOARD_ANT_WIRELESS_DEVICE := "qualcomm-hidl"
 endif
 
-ifneq ($(filter msm8937 msm8953 msm8909, $(TARGET_BOARD_PLATFORM)),)
+ifneq ($(filter msm8937 msm8953 msm8909 monaco, $(TARGET_BOARD_PLATFORM)),)
 BOARD_ANT_WIRELESS_DEVICE := "vfs-prerelease"
 endif
 
@@ -22,6 +22,10 @@ TARGET_USE_QTI_BT_CONFIGSTORE := true
 TARGET_USE_QTI_BT_SAR := true
 TARGET_USE_QTI_VND_FWK_DETECT := true
 TARGET_USE_BT_DUN := false
+
+ifeq ($(TARGET_BOARD_PLATFORM),monaco)
+TARGET_USE_QTI_BT_SAR := false
+endif
 
 ifeq ($(TARGET_BOARD_PLATFORM),msm8937)
 ifeq ($(TARGET_BOARD_SUFFIX),_32go)
