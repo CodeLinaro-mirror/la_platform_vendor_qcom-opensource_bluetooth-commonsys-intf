@@ -5,8 +5,10 @@ PRODUCT_PACKAGES += AntHalService
 PRODUCT_PACKAGES += libantradio
 PRODUCT_PACKAGES += antradio_app
 else
+ifneq ($(TARGET_BOARD_PLATFORM),monaco)
 PRODUCT_PACKAGES += AntHalService-Soong
 PRODUCT_PACKAGES += com.dsi.ant@1.0
+endif
 endif
 endif #TARGET_FWK_SUPPORTS_FULL_VALUEADDS
 
