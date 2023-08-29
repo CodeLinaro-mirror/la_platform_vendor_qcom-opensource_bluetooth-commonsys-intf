@@ -65,6 +65,12 @@ PRODUCT_PACKAGES_DEBUG += rfc
 
 PRODUCT_PACKAGES_DEBUG += wearos_bluetooth_rfcomm_testapp
 
+PRODUCT_PACKAGES_DEBUG += wearos_ble_testapp
+# for BletestApp implementation
+SOONG_CONFIG_NAMESPACES += qc_bt_BleTestApp
+SOONG_CONFIG_qc_bt_BleTestApp += qc_bt_enable_disable_BleTestApp
+SOONG_CONFIG_qc_bt_BleTestApp_qc_bt_enable_disable_BleTestApp := enabled
+
 ifneq ($(TARGET_HAS_LOW_RAM), true)
 PRODUCT_PACKAGES_DEBUG += BTTestApp
 endif #TARGET_HAS_LOW_RAM
