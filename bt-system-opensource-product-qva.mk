@@ -5,3 +5,6 @@ endif
 # Set max connected audio devices as 1
 PRODUCT_PRODUCT_PROPERTIES += \
     persist.bluetooth.maxconnectedaudiodevices=1
+
+PRODUCT_PRODUCT_PROPERTIES += \
+    bluetooth.profile.hid.host.enabled=true
