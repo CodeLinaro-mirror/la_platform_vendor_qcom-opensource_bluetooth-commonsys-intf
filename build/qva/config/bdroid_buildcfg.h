@@ -20,15 +20,44 @@
 #ifndef _BDROID_BUILDCFG_H
 #define _BDROID_BUILDCFG_H
 #define BTM_DEF_LOCAL_NAME   "QCOM-BTD"
-// Disables read remote device feature
-#define MAX_ACL_CONNECTIONS   16
-#define MAX_L2CAP_CHANNELS    64
-#define BLE_VND_INCLUDED   TRUE
-#define GATT_MAX_PHY_CHANNEL  10
-// skips conn update at conn completion
-#define BT_CLEAN_TURN_ON_DISABLED 1
+#define BTA_DISABLE_DELAY 1000 /* in milliseconds */
+#define BTA_SKIP_BLE_READ_REMOTE_FEAT TRUE
+#define BLE_PERIPHERAL_MODE_SUPPORT   TRUE
+#define BLE_PERIPHERAL_DISPLAYONLY    TRUE
+#define BLE_DELAY_REQUEST_ENC         TRUE
+#define BLE_LOCAL_PRIVACY_ENABLED     FALSE
+#define BLE_VND_INCLUDED              TRUE
+#define BLE_DYNAMIC_LATENCY_ENABLED   FALSE
 
-#define AVDT_NUM_SEPS 35
+#define MAX_L2CAP_CHANNELS    14
+// skips conn update at conn completion
+#define BTA_BLE_SKIP_CONN_UPD  FALSE
+
+#define BTA_DM_COD {0x00, BTM_COD_MAJOR_WEARABLE, BTM_COD_MINOR_WRIST_WATCH}
+
+#define BTA_AR_INCLUDED               TRUE
+#define A2D_INCLUDED                  TRUE
+#define AVDT_INCLUDED                 TRUE
+#define AVCT_INCLUDED                 TRUE
+#define AVRC_INCLUDED                 TRUE
+#define PAN_NAP_DISABLED              TRUE
+
+#define BTA_DM_PM_SNIFF_MAX      2048
+#define BTA_DM_PM_SNIFF_MIN      1024
+#define BTA_DM_PM_SNIFF_ATTEMPT  4
+#define BTA_DM_PM_SNIFF_TIMEOUT  1
+
+#define GAP_TRANSPORT_SUPPORTED       GATT_TRANSPORT_LE
+#define GATTP_TRANSPORT_SUPPORTED     GATT_TRANSPORT_LE
+
+#define BTM_DEFAULT_SCAN_TYPE         BTM_SCAN_TYPE_STANDARD
+
+
+#define AVRC_TG_FEATURES (BTRC_FEAT_METADATA | BTRC_FEAT_ABSOLUTE_VOLUME)
+
+#define AVRC_TG_EVENTS (BTRC_EVT_PLAY_STATUS_CHANGED | \
+                        BTRC_EVT_TRACK_CHANGE | BTRC_EVT_AVAL_PLAYER_CHANGE | \
+                        BTRC_EVT_ADDR_PLAYER_CHANGE | BTRC_EVT_UIDS_CHANGED)
 
 /* HFP HF CLIENT features */
 #define BTHF_CLIENT_FEAT_ECNR  0x00000001 /* Echo cancellation and/or noise reduction */
@@ -49,12 +78,6 @@
     (BT_AG_FEAT_ECNR | BT_AG_FEAT_REJECT |  \
      BT_AG_FEAT_ECS | BT_AG_FEAT_EXTERR |   \
      BT_AG_FEAT_HF_IND | BT_AG_FEAT_ESCO |  \
-                            BT_AG_FEAT_UNAT | BT_AG_FEAT_CODEC)
-
-#define AVRC_TG_FEATURES (BTRC_FEAT_METADATA | BTRC_FEAT_ABSOLUTE_VOLUME)
-
-#define AVRC_TG_EVENTS (BTRC_EVT_PLAY_STATUS_CHANGED | \
-                        BTRC_EVT_TRACK_CHANGE | BTRC_EVT_AVAL_PLAYER_CHANGE | \
-                        BTRC_EVT_ADDR_PLAYER_CHANGE | BTRC_EVT_UIDS_CHANGED)
+     BT_AG_FEAT_UNAT | BT_AG_FEAT_CODEC)
 
 #endif
