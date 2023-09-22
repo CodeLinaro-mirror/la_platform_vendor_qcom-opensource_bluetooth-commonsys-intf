@@ -55,12 +55,13 @@ PRODUCT_PACKAGES += vendor.qti.hardware.bluetooth_dun-V1.0-java
 PRODUCT_PACKAGES += BluetoothExt
 endif #TARGET_USE_BT_DUN
 
-PRODUCT_SOONG_NAMESPACES += $BOARD_OPENSOURCE_DIR/commonsys/packages/apps/Bluetooth
-PRODUCT_SOONG_NAMESPACES += $BOARD_OPENSOURCE_DIR/commonsys/system/bt/conf
-PRODUCT_SOONG_NAMESPACES += $BOARD_OPENSOURCE_DIR/commonsys/system/bt/main
+PRODUCT_SOONG_NAMESPACES += $(BOARD_OPENSOURCE_DIR)/commonsys/packages/apps/Bluetooth
+PRODUCT_SOONG_NAMESPACES += $(BOARD_OPENSOURCE_DIR)/commonsys/system/bt/conf
+PRODUCT_SOONG_NAMESPACES += $(BOARD_OPENSOURCE_DIR)/commonsys/system/bt/main
 
-#PRODUCT_PACKAGE_OVERLAYS += $BOARD_OPENSOURCE_DIR/commonsys-intf/bluetooth/overlay/qva
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $BOARD_OPENSOURCE_DIR/commonsys-intf/bluetooth/build/qva/config
+
+#PRODUCT_PACKAGE_OVERLAYS += $(BOARD_OPENSOURCE_DIR)/commonsys-intf/bluetooth/overlay/qva
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(BOARD_OPENSOURCE_DIR)/commonsys-intf/bluetooth/build/qva/config
 
 # BT Related Test app & Tools
 PRODUCT_PACKAGES_DEBUG += btsnoop
@@ -95,14 +96,14 @@ endif
 
 else
 PRODUCT_SOONG_NAMESPACES += packages/modules/Bluetooth/android/app
-PRODUCT_PACKAGE_OVERLAYS += $BOARD_OPENSOURCE_DIR/commonsys-intf/bluetooth/overlay/generic
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $BOARD_OPENSOURCE_DIR/commonsys-intf/bluetooth/build/generic/config
+PRODUCT_PACKAGE_OVERLAYS += $(BOARD_OPENSOURCE_DIR)/commonsys-intf/bluetooth/overlay/generic
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(BOARD_OPENSOURCE_DIR)/commonsys-intf/bluetooth/build/generic/config
 endif #TARGET_USE_QTI_BT_STACK
 
 else
 PRODUCT_SOONG_NAMESPACES += packages/modules/Bluetooth/android/app
-#PRODUCT_PACKAGE_OVERLAYS += $BOARD_OPENSOURCE_DIR/commonsys-intf/bluetooth/overlay/generic
-#BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $BOARD_OPENSOURCE_DIR/commonsys-intf/bluetooth/build/generic/config
+#PRODUCT_PACKAGE_OVERLAYS += $(BOARD_OPENSOURCE_DIR)/commonsys-intf/bluetooth/overlay/generic
+#BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(BOARD_OPENSOURCE_DIR)/commonsys-intf/bluetooth/build/generic/config
 SOONG_CONFIG_aosp_vs_qva_aosp_or_qva := aosp
 endif #TARGET_USE_WEAR_QC_BT_STACK
 
