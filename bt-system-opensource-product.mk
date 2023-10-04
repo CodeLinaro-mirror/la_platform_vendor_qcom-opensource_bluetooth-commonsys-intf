@@ -44,17 +44,22 @@ PRODUCT_PACKAGES += vendor.qti.hardware.btconfigstore@2.0
 PRODUCT_PACKAGES += com.qualcomm.qti.bluetooth_audio@1.0
 PRODUCT_PACKAGES += vendor.qti.hardware.bluetooth_audio@2.0
 
+
+ifeq ($(BOARD_OPENSOURCE_DIR),)
+    BOARD_OPENSOURCE_DIR := vendor/qcom/opensource
+endif
+
 ifeq ($(TARGET_USE_BT_DUN),true)
 PRODUCT_PACKAGES += vendor.qti.hardware.bluetooth_dun-V1.0-java
 PRODUCT_PACKAGES += BluetoothExt
 endif #TARGET_USE_BT_DUN
 
-PRODUCT_SOONG_NAMESPACES += vendor/qcom/opensource/commonsys/packages/apps/Bluetooth
-PRODUCT_SOONG_NAMESPACES += vendor/qcom/opensource/commonsys/system/bt/conf
-PRODUCT_SOONG_NAMESPACES += vendor/qcom/opensource/commonsys/system/bt/main
+PRODUCT_SOONG_NAMESPACES += $BOARD_OPENSOURCE_DIR/commonsys/packages/apps/Bluetooth
+PRODUCT_SOONG_NAMESPACES += $BOARD_OPENSOURCE_DIR/commonsys/system/bt/conf
+PRODUCT_SOONG_NAMESPACES += $BOARD_OPENSOURCE_DIR/commonsys/system/bt/main
 
-#PRODUCT_PACKAGE_OVERLAYS += vendor/qcom/opensource/commonsys-intf/bluetooth/overlay/qva
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := vendor/qcom/opensource/commonsys-intf/bluetooth/build/qva/config
+#PRODUCT_PACKAGE_OVERLAYS += $BOARD_OPENSOURCE_DIR/commonsys-intf/bluetooth/overlay/qva
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $BOARD_OPENSOURCE_DIR/commonsys-intf/bluetooth/build/qva/config
 
 # BT Related Test app & Tools
 PRODUCT_PACKAGES_DEBUG += btsnoop
@@ -71,13 +76,13 @@ endif #TARGET_HAS_LOW_RAM
 
 else
 #PRODUCT_SOONG_NAMESPACES += packages/modules/Bluetooth/android/app
-#PRODUCT_PACKAGE_OVERLAYS += vendor/qcom/opensource/commonsys-intf/bluetooth/overlay/generic
-#BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := vendor/qcom/opensource/commonsys-intf/bluetooth/build/generic/config
+#PRODUCT_PACKAGE_OVERLAYS += $BOARD_OPENSOURCE_DIR/commonsys-intf/bluetooth/overlay/generic
+#BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $BOARD_OPENSOURCE_DIR/commonsys-intf/bluetooth/build/generic/config
 endif #TARGET_USE_QTI_BT_STACK
 
 else
-#PRODUCT_PACKAGE_OVERLAYS += vendor/qcom/opensource/commonsys-intf/bluetooth/overlay/generic
-#BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := vendor/qcom/opensource/commonsys-intf/bluetooth/build/generic/config
+#PRODUCT_PACKAGE_OVERLAYS += $BOARD_OPENSOURCE_DIR/commonsys-intf/bluetooth/overlay/generic
+#BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $BOARD_OPENSOURCE_DIR/commonsys-intf/bluetooth/build/generic/config
 endif #TARGET_FWK_SUPPORTS_FULL_VALUEADDS
 
 endif #BOARD_HAVE_BLUETOOTH_QCOM
