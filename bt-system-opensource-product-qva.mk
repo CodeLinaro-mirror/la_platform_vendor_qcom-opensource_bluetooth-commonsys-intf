@@ -15,6 +15,6 @@ PRODUCT_PRODUCT_PROPERTIES += \
     persist.bluetooth.dual_adapter_mode=true
 
 PRODUCT_PRODUCT_PROPERTIES += \
-    bluetooth.profile.a2dp.source.enabled=true \
+    bluetooth.profile.a2dp.source.enabled=false \
     bluetooth.profile.avrcp.target.enabled=true
 endif
