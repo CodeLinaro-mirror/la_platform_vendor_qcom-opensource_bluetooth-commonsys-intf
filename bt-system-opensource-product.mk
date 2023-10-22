@@ -19,12 +19,12 @@ PRODUCT_PACKAGES += Bluetooth
 ifneq ($(TARGET_BOARD_TYPE),auto)
 # Set supported Bluetooth profiles to enabled
 PRODUCT_PRODUCT_PROPERTIES += \
-    bluetooth.profile.a2dp.source.enabled=false \
-    bluetooth.profile.avrcp.target.enabled=false \
-    bluetooth.profile.avrcp.controller.enabled=false \
-    bluetooth.profile.hfp.ag.enabled=false \
+    bluetooth.profile.a2dp.source.enabled=true \
+    bluetooth.profile.avrcp.target.enabled=true \
+    bluetooth.profile.avrcp.controller.enabled=true \
+    bluetooth.profile.hfp.ag.enabled=true \
     bluetooth.profile.gatt.enabled=true \
-    bluetooth.profile.hfp.hf.enabled=false
+    bluetooth.profile.hfp.hf.enabled=true
 endif #TARGET_BOARD_TYPE
 
 ifeq ($(TARGET_FWK_SUPPORTS_FULL_VALUEADDS), true)
