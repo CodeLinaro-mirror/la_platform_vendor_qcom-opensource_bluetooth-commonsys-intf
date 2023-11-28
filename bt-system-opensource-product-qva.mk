@@ -16,5 +16,5 @@ PRODUCT_PRODUCT_PROPERTIES += \
 
 PRODUCT_PRODUCT_PROPERTIES += \
     bluetooth.profile.a2dp.source.enabled=false \
-    bluetooth.profile.avrcp.target.enabled=true
+    bluetooth.profile.avrcp.target.enabled=false
 endif
