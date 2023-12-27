@@ -71,6 +71,7 @@ PRODUCT_PACKAGES_DEBUG += l2test_ertm
 PRODUCT_PACKAGES_DEBUG += rfc
 
 PRODUCT_PACKAGES_DEBUG += wearos_bluetooth_rfcomm_testapp
+PRODUCT_PACKAGES_DEBUG += BTProfileTestApp
 
 ifneq ($(TARGET_HAS_LOW_RAM), true)
 PRODUCT_PACKAGES_DEBUG += BTTestApp
