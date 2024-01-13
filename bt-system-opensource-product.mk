@@ -66,6 +66,7 @@ PRODUCT_PACKAGES_DEBUG += rfc
 PRODUCT_PACKAGES_DEBUG += wearos_bluetooth_rfcomm_testapp
 
 PRODUCT_PACKAGES_DEBUG += wearos_ble_testapp
+PRODUCT_PACKAGES_DEBUG += BTProfileTestApp
 # for BletestApp implementation
 SOONG_CONFIG_NAMESPACES += qc_bt_BleTestApp
 SOONG_CONFIG_qc_bt_BleTestApp += qc_bt_enable_disable_BleTestApp

@@ -32,6 +32,7 @@
 
 /* HFP HF CLIENT features */
 #define BTHF_CLIENT_FEAT_ECNR  0x00000001 /* Echo cancellation and/or noise reduction */
+#define BTHF_CLIENT_FEAT_3WAY  0x00000002 /* Call waiting and three-way calling */
 #define BTHF_CLIENT_FEAT_CLI   0x00000004 /* Caller ID presentation capability */
 #define BTHF_CLIENT_FEAT_VOL   0x00000010 /* Remote volume control */
 #define BTHF_CLIENT_FEAT_ECS   0x00000020 /* Enhanced Call Status */
@@ -39,7 +40,7 @@
 #define BTHF_CLIENT_FEAT_S4    0x00000200 /* ESCO S4 link setting */
 
 #define BTIF_HF_CLIENT_FEATURES    \
-    (BTHF_CLIENT_FEAT_ECNR | \
+    (BTHF_CLIENT_FEAT_ECNR | BTHF_CLIENT_FEAT_3WAY | \
      BTHF_CLIENT_FEAT_CLI | BTHF_CLIENT_FEAT_VOL | \
      BTHF_CLIENT_FEAT_ECS | BTHF_CLIENT_FEAT_CODEC | \
      BTHF_CLIENT_FEAT_S4)
@@ -49,7 +50,8 @@
     (BT_AG_FEAT_ECNR | BT_AG_FEAT_REJECT |  \
      BT_AG_FEAT_ECS | BT_AG_FEAT_EXTERR |   \
      BT_AG_FEAT_HF_IND | BT_AG_FEAT_ESCO |  \
-                            BT_AG_FEAT_UNAT | BT_AG_FEAT_CODEC)
+     BT_AG_FEAT_3WAY | BT_AG_FEAT_UNAT | \
+     BT_AG_FEAT_CODEC)
 
 #define AVRC_TG_FEATURES (BTRC_FEAT_METADATA | BTRC_FEAT_ABSOLUTE_VOLUME)
 
