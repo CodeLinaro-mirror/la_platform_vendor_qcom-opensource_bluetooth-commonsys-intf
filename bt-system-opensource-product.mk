@@ -74,6 +74,12 @@ ifneq ($(TARGET_HAS_LOW_RAM), true)
 PRODUCT_PACKAGES_DEBUG += BTTestApp
 endif #TARGET_HAS_LOW_RAM
 
+# Enable A2DP Sink by default
+# Enable HFP CLIENT by default
+PRODUCT_PRODUCT_PROPERTIES += \
+  persist.vendor.service.bt.a2dp.sink=true \
+  persist.vendor.bluetooth.hfp_client=true
+
 else
 #PRODUCT_SOONG_NAMESPACES += packages/modules/Bluetooth/android/app
 #PRODUCT_PACKAGE_OVERLAYS += vendor/qcom/opensource/commonsys-intf/bluetooth/overlay/generic
