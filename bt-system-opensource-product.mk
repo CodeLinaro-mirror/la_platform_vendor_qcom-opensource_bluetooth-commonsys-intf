@@ -29,8 +29,9 @@ PRODUCT_PRODUCT_PROPERTIES += \
     bluetooth.profile.opp.enabled=true \
     bluetooth.profile.pan.nap.enabled=true \
     bluetooth.profile.pan.panu.enabled=true \
-    bluetooth.profile.pbap.server.enabled=true \
-    bluetooth.profile.sap.server.enabled=true
+    bluetooth.profile.pbap.server.enabled=true
+
+PRODUCT_SYSTEM_EXT_PROPERTIES += bluetooth.profile.sap.server.enabled=true
 endif #TARGET_BOARD_TYPE
 
 ifeq ($(TARGET_FWK_SUPPORTS_FULL_VALUEADDS), true)
