@@ -12,6 +12,8 @@ endif
 endif
 endif #TARGET_USE_WEAR_QC_BT_STACK
 
+PRODUCT_PACKAGES_DEBUG += wearos_bluetooth_rfcomm_testapp
+
 # for RfCommTestApp implementation
 SOONG_CONFIG_NAMESPACES += qc_bt_RfCommTestApp
 SOONG_CONFIG_qc_bt_RfCommTestApp += aosp_or_qc_bt_RfCommTestApp
@@ -78,8 +80,6 @@ PRODUCT_PACKAGES_DEBUG += gatt_tool_qti_internal
 PRODUCT_PACKAGES_DEBUG += l2cap_coc_tool
 PRODUCT_PACKAGES_DEBUG += l2test_ertm
 PRODUCT_PACKAGES_DEBUG += rfc
-
-PRODUCT_PACKAGES_DEBUG += wearos_bluetooth_rfcomm_testapp
 
 ifneq ($(TARGET_HAS_LOW_RAM), true)
 PRODUCT_PACKAGES_DEBUG += BTTestApp
