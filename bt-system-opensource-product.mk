@@ -107,6 +107,16 @@ PRODUCT_SOONG_NAMESPACES += packages/modules/Bluetooth/android/app
 SOONG_CONFIG_aosp_vs_qva_aosp_or_qva := aosp
 endif #TARGET_USE_WEAR_QC_BT_STACK
 
+PRODUCT_PACKAGES_DEBUG += wearos_ble_testapp
+# for BletestApp implementation
+SOONG_CONFIG_NAMESPACES += qc_bt_BleTestApp
+SOONG_CONFIG_qc_bt_BleTestApp += qc_bt_enable_disable_BleTestApp
+ifeq ($(TARGET_USE_WEAR_QC_BT_STACK),true)
+SOONG_CONFIG_qc_bt_BleTestApp_qc_bt_enable_disable_BleTestApp := enabled
+else
+SOONG_CONFIG_qc_bt_BleTestApp_qc_bt_enable_disable_BleTestApp := disabled
+endif
+
 endif #BOARD_HAVE_BLUETOOTH_QCOM
 
 #FM
