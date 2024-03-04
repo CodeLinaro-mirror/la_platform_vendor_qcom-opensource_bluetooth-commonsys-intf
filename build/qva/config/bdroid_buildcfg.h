@@ -15,6 +15,10 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
+ *
+ * Changes from Qualcomm Innovation Center, Inc. are provided under the following license:
+ * Copyright (c) 2024 Qualcomm Innovation Center, Inc. All rights reserved.
+ * SPDX-License-Identifier: BSD-3-Clause-Clear
  */
 
 #ifndef _BDROID_BUILDCFG_H
@@ -27,6 +31,20 @@
 #define GATT_MAX_PHY_CHANNEL  10
 // skips conn update at conn completion
 #define BT_CLEAN_TURN_ON_DISABLED 1
+
+/* Default class of device
+* {SERVICE_CLASS, MAJOR_CLASS, MINOR_CLASS}
+*
+* SERVICE_CLASS:0x74 (Bit18 -Rendering,Bit20 -Object Transfer
+* ,Bit21 -Audio,Bit22 - Telephony)
+* MAJOR_CLASS:0x04 - AUDIO_VIDEO
+* MINOR_CLASS:0x20 - CAR_AUDIO
+*
+*/
+#ifndef BTA_DM_COD
+#define BTA_DM_COD \
+  { 0x74, 0x04, 0x20 }
+#endif
 
 #define AVDT_NUM_SEPS 35
 #endif
