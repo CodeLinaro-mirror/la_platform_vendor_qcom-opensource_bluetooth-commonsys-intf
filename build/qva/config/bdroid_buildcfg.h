@@ -38,12 +38,12 @@
 * SERVICE_CLASS:0x74 (Bit18 -Rendering,Bit20 -Object Transfer
 * ,Bit21 -Audio,Bit22 - Telephony)
 * MAJOR_CLASS:0x04 - AUDIO_VIDEO
-* MINOR_CLASS:0x20 - CAR_AUDIO
+* MINOR_CLASS:0x08 - AUDIO_VIDEO_HANDSFREE
 *
 */
 #ifndef BTA_DM_COD
 #define BTA_DM_COD \
-  { 0x74, 0x04, 0x20 }
+  { 0x74, 0x04, 0x08 }
 #endif
 
 #define AVDT_NUM_SEPS 35
