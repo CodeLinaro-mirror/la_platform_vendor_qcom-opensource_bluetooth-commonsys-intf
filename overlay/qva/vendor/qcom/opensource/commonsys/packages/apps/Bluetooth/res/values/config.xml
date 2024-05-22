@@ -28,12 +28,16 @@
      WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
      OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
      IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+     Changes from Qualcomm Innovation Center, Inc. are provided under the following license:
+     Copyright (c) 2024 Qualcomm Innovation Center, Inc. All rights reserved.
+     SPDX-License-Identifier: BSD-3-Clause-Clear
 -->
 <resources>
-    <bool name="profile_supported_hfpclient">false</bool>
+    <bool name="profile_supported_hfpclient">true</bool>
     <bool name="profile_supported_avrcp_controller">true</bool>
     <bool name="profile_supported_a2dp_sink">true</bool>
-    <bool name="profile_supported_sap">true</bool>
-    <bool name="profile_supported_ba">true</bool>
+    <bool name="profile_supported_sap">false</bool>
+    <bool name="profile_supported_ba">false</bool>
     <bool name="profile_supported_avrcp_target">false</bool>
 </resources>
