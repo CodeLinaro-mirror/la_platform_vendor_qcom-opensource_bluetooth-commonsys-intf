@@ -33,17 +33,6 @@ PRODUCT_PRODUCT_PROPERTIES += \
     bluetooth.profile.sap.server.enabled=true
 endif #TARGET_BOARD_TYPE
 
-ifeq ($(TARGET_BOARD_TYPE),auto)
-# Enable BLE Audio profile in AUTO
-PRODUCT_PRODUCT_PROPERTIES +=  \
-    bluetooth.profile.bap.broadcast.assist.enabled=true \
-    bluetooth.profile.bap.broadcast.source.enabled=true \
-    bluetooth.profile.bap.unicast.client.enabled=true \
-    bluetooth.profile.csip.set_coordinator.enabled=true \
-    bluetooth.profile.vcp.controller.enabled=true \
-    bluetooth.profile.mcp.server.enabled=true
-endif #TARGET_BOARD_TYPE
-
 ifeq ($(TARGET_FWK_SUPPORTS_FULL_VALUEADDS), true)
 ifeq ($(TARGET_BOARD_TYPE),auto)
 TARGET_USE_AUTO_BT_STACK := true
