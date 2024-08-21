@@ -7,7 +7,8 @@ PRODUCT_PRODUCT_PROPERTIES += \
     persist.bluetooth.maxconnectedaudiodevices=1
 
 PRODUCT_PRODUCT_PROPERTIES += \
-    bluetooth.profile.hid.host.enabled=true
+    bluetooth.profile.hid.host.enabled=true \
+    bluetooth.profile.opp.enabled=true
 
 ifeq ($(BOARD_HAVE_DUAL_BLUETOOTH), true)
 PRODUCT_PRODUCT_PROPERTIES += \
