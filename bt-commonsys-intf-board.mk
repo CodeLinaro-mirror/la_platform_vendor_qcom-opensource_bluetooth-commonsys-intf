@@ -4,11 +4,6 @@ BOARD_ANT_WIRELESS_DEVICE := "qualcomm-hidl"
 #BT
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_QCOM := true
-ifeq ($(TARGET_FWK_SUPPORTS_FULL_VALUEADDS),true)
-ifeq ($(TARGET_BOARD_TYPE),auto)
-BOARD_HAVE_DUAL_BLUETOOTH := true
-endif
-endif
 
 #FM
 ifeq ($(TARGET_BOARD_TYPE),auto)
