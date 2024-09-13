@@ -41,7 +41,8 @@ PRODUCT_PRODUCT_PROPERTIES +=  \
     bluetooth.profile.bap.unicast.client.enabled=true \
     bluetooth.profile.csip.set_coordinator.enabled=true \
     bluetooth.profile.vcp.controller.enabled=true \
-    bluetooth.profile.mcp.server.enabled=true
+    bluetooth.profile.mcp.server.enabled=true \
+    bluetooth.profile.ccp.server.enabled=true
 endif #TARGET_BOARD_TYPE
 
 ifeq ($(TARGET_FWK_SUPPORTS_FULL_VALUEADDS), true)
