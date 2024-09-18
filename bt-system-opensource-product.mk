@@ -34,9 +34,8 @@ PRODUCT_PRODUCT_PROPERTIES += \
 endif #TARGET_BOARD_TYPE
 
 ifeq ($(TARGET_FWK_SUPPORTS_FULL_VALUEADDS), true)
-ifneq ($(TARGET_BOARD_TYPE),auto)
-TARGET_USE_QTI_BT_STACK := true
-endif
+TARGET_USE_AUTO_BT_STACK := true
+TARGET_USE_QTI_BT_STACK := false
 
 ifeq ($(TARGET_USE_QTI_BT_STACK),true)
 # BT Related Libs
@@ -83,6 +82,11 @@ else
 PRODUCT_PACKAGE_OVERLAYS += vendor/qcom/opensource/commonsys-intf/bluetooth/overlay/generic
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := vendor/qcom/opensource/commonsys-intf/bluetooth/build/generic/config
 endif #TARGET_FWK_SUPPORTS_FULL_VALUEADDS
+
+ifeq ($(TARGET_USE_AUTO_BT_STACK),true)
+include vendor/qcom/opensource/commonsys-intf/bluetooth/bt-system-opensource-product-qva.mk
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := vendor/qcom/opensource/commonsys-intf/bluetooth/build/auto/config
+endif #TARGET_USE_AUTO_BT_STACK
 
 endif #BOARD_HAVE_BLUETOOTH_QCOM
 
