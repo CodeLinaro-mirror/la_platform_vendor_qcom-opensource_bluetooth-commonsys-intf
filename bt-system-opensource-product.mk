@@ -17,18 +17,24 @@ PRODUCT_PACKAGES += Bluetooth
 ifneq ($(TARGET_BOARD_TYPE),auto)
 # Set supported Bluetooth profiles to enabled
 PRODUCT_PRODUCT_PROPERTIES += \
+    bluetooth.device.class_of_device=38,4,8 \
+    bluetooth.profile.a2dp.sink.enabled=true \
     bluetooth.profile.a2dp.source.enabled=false \
+    bluetooth.profile.avrcp.controller.enabled=true \
     bluetooth.profile.avrcp.target.enabled=false \
     bluetooth.profile.avrcp.controller.enabled=true \
     bluetooth.profile.hfp.ag.enabled=false \
+    bluetooth.profile.hfp.hf.enabled=true \
     bluetooth.profile.asha.central.enabled=false \
     bluetooth.profile.gatt.enabled=true \
     bluetooth.profile.hid.host.enabled=false \
     bluetooth.profile.hid.device.enabled=false \
+    bluetooth.profile.map.client.enabled=true \
     bluetooth.profile.map.server.enabled=false \
     bluetooth.profile.opp.enabled=false \
     bluetooth.profile.pan.nap.enabled=false \
     bluetooth.profile.pan.panu.enabled=false \
+    bluetooth.profile.pbap.client.enabled=true \
     bluetooth.profile.pbap.server.enabled=false \
     bluetooth.profile.sap.server.enabled=false
 endif #TARGET_BOARD_TYPE
