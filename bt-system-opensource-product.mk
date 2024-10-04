@@ -6,7 +6,9 @@ PRODUCT_PACKAGES += libantradio
 PRODUCT_PACKAGES += antradio_app
 else
 PRODUCT_PACKAGES += AntHalService-Soong
+ifneq ($(TARGET_BOARD_DERIVATIVE_SUFFIX),$(filter $(TARGET_BOARD_DERIVATIVE_SUFFIX), _sdvcomm _sdv _cdccomm _cdcsdv))
 PRODUCT_PACKAGES += com.dsi.ant@1.0
+endif
 endif
 endif #TARGET_FWK_SUPPORTS_FULL_VALUEADDS
 
