@@ -17,34 +17,38 @@ PRODUCT_PACKAGES += Bluetooth
 ifneq ($(TARGET_BOARD_TYPE),auto)
 # Set supported Bluetooth profiles to enabled
 PRODUCT_PRODUCT_PROPERTIES += \
-    bluetooth.profile.a2dp.source.enabled=true \
-    bluetooth.profile.avrcp.target.enabled=true \
+    bluetooth.profile.a2dp.source.enabled=false \
+    bluetooth.profile.avrcp.target.enabled=false \
     bluetooth.profile.avrcp.controller.enabled=true \
-    bluetooth.profile.hfp.ag.enabled=true \
+    bluetooth.profile.hfp.ag.enabled=false \
     bluetooth.profile.gatt.enabled=true \
     bluetooth.profile.hid.host.enabled=true \
-    bluetooth.profile.hid.device.enabled=true \
-    bluetooth.profile.map.server.enabled=true \
+    bluetooth.profile.hid.device.enabled=false \
+    bluetooth.profile.map.server.enabled=false \
     bluetooth.profile.opp.enabled=true \
-    bluetooth.profile.pan.nap.enabled=true \
+    bluetooth.profile.pan.nap.enabled=false \
     bluetooth.profile.pan.panu.enabled=true \
-    bluetooth.profile.pbap.server.enabled=true \
-    bluetooth.profile.bas.client.enabled=true \
+    bluetooth.profile.pbap.server.enabled=false \
+    bluetooth.profile.bas.client.enabled=false \
+    bluetooth.profile.a2dp.sink.enabled=true \
+    bluetooth.profile.hfp.hf.enabled=true \
+    bluetooth.profile.map.client.enabled=true \
+    bluetooth.profile.pbap.client.enabled=true \
     bluetooth.device_id.vendor_id=0x001D
 
 PRODUCT_SYSTEM_EXT_PROPERTIES += \
-    bluetooth.profile.sap.server.enabled=true \
-    bluetooth.profile.pbap.sim.enabled=true \
-    bluetooth.hfp.codec_aptx_voice.enabled=true \
-    bluetooth.hfp.swb.aptx.power_management.enabled=true \
-    ro.bluetooth.leaudio_offload.supported=true \
-    bluetooth.device.class_of_device=90,2,12 \
-    persist.bluetooth.leaudio_offload.disabled=false \
+    bluetooth.profile.sap.server.enabled=false \
+    bluetooth.profile.pbap.sim.enabled=false \
+    bluetooth.hfp.codec_aptx_voice.enabled=false \
+    bluetooth.hfp.swb.aptx.power_management.enabled=false \
+    ro.bluetooth.leaudio_offload.supported=false \
+    bluetooth.device.class_of_device=26,4,8 \
+    persist.bluetooth.leaudio_offload.disabled=true \
     persist.bluetooth.leaudio.allow.multiple.context=false \
-    persist.bluetooth.leaudio.bypass_allow_list=true \
-    bluetooth.leaudio.dual_bidirection_swb.supported=true \
-    persist.bluetooth.leaudio.notify.idle.during.call=true \
-    persist.vendor.bluetooth.haltest=true
+    persist.bluetooth.leaudio.bypass_allow_list=false \
+    bluetooth.leaudio.dual_bidirection_swb.supported=false \
+    persist.bluetooth.leaudio.notify.idle.during.call=false \
+    persist.vendor.bluetooth.haltest=false
 
 ifneq ($(TARGET_HAS_LOW_RAM), true)
 PRODUCT_PACKAGES += Xpan
