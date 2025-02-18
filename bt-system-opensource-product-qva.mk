@@ -5,3 +5,6 @@ PRODUCT_PRODUCT_PROPERTIES += \
     persist.bluetooth.maxconnectedaudiodevices=1
 PRODUCT_PRODUCT_PROPERTIES += \
     bluetooth.gatt.over_bredr.enabled=false
+# Enable Hid Host (BR/EDR) and HOGP
+PRODUCT_PRODUCT_PROPERTIES += \
+    bluetooth.profile.hid.host.enabled=true
