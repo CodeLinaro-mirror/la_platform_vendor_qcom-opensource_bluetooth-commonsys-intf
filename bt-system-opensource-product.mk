@@ -78,7 +78,7 @@ endif #TARGET_HAS_LOW_RAM
 # Enable HFP CLIENT by default
 PRODUCT_PRODUCT_PROPERTIES += \
   persist.vendor.service.bt.a2dp.sink=true \
-  persist.vendor.bluetooth.hfp_client=true
+  persist.vendor.service.bt.hfp.client=true
 
 else
 #PRODUCT_SOONG_NAMESPACES += packages/modules/Bluetooth/android/app
