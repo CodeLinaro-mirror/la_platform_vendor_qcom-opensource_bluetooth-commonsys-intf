@@ -40,13 +40,13 @@ else ifneq ($(TARGET_BOARD_TYPE),auto)
       bluetooth.profile.gatt.enabled=true \
       bluetooth.profile.hid.host.enabled=true \
       bluetooth.profile.hid.device.enabled=true \
-      bluetooth.profile.map.server.enabled=true \
       bluetooth.profile.opp.enabled=true \
       bluetooth.profile.pan.nap.enabled=true \
-      bluetooth.profile.pan.panu.enabled=true \
-      bluetooth.profile.pbap.server.enabled=true
+      bluetooth.profile.pan.panu.enabled=true
 
   PRODUCT_SYSTEM_EXT_PROPERTIES += bluetooth.profile.sap.server.enabled=true
+  PRODUCT_SYSTEM_EXT_PROPERTIES += bluetooth.profile.pbap.server.enabled=true
+  PRODUCT_SYSTEM_EXT_PROPERTIES += bluetooth.profile.map.server.enabled=true
 endif #TARGET_BOARD_TYPE
 
 ifeq ($(TARGET_FWK_SUPPORTS_FULL_VALUEADDS), true)
