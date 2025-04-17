@@ -50,6 +50,10 @@ PRODUCT_SYSTEM_EXT_PROPERTIES += \
     persist.bluetooth.leaudio.notify.idle.during.call=false \
     persist.vendor.bluetooth.haltest=false
 
+# Set max connected audio devices as 1
+PRODUCT_PRODUCT_PROPERTIES += \
+    persist.bluetooth.maxconnectedaudiodevices=1
+
 ifneq ($(TARGET_HAS_LOW_RAM), true)
 PRODUCT_PACKAGES += Xpan
 PRODUCT_PACKAGES += privapp-permission-xpan.xml
