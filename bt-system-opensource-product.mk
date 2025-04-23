@@ -53,6 +53,8 @@ PRODUCT_SYSTEM_EXT_PROPERTIES += \
 # Set max connected audio devices as 1
 PRODUCT_PRODUCT_PROPERTIES += \
     persist.bluetooth.maxconnectedaudiodevices=1
+PRODUCT_PRODUCT_PROPERTIES += \
+    bluetooth.gatt.over_bredr.enabled=false
 
 ifneq ($(TARGET_HAS_LOW_RAM), true)
 PRODUCT_PACKAGES += Xpan
