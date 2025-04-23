@@ -24,23 +24,29 @@ PRODUCT_PRODUCT_PROPERTIES += \
     bluetooth.profile.pbap.client.enabled=true \
     bluetooth.device_id.vendor_id=0x001D \
 ifneq ($(TARGET_SUPPORTS_WEAR_ANDROID), true)
-    bluetooth.profile.pan.nap.enabled=true \
+    bluetooth.profile.pan.nap.enabled=false \
     bluetooth.profile.pan.panu.enabled=true \
 endif #TARGET_SUPPORTS_WEAR_ANDROID
 
 PRODUCT_SYSTEM_EXT_PROPERTIES += \
     bluetooth.profile.sap.server.enabled=false \
     bluetooth.profile.pbap.sim.enabled=false \
-    bluetooth.hfp.codec_aptx_voice.enabled=true \
-    bluetooth.hfp.swb.aptx.power_management.enabled=true \
-    ro.bluetooth.leaudio_offload.supported=true \
+    bluetooth.hfp.codec_aptx_voice.enabled=false \
+    bluetooth.hfp.swb.aptx.power_management.enabled=false \
+    ro.bluetooth.leaudio_offload.supported=false \
     bluetooth.device.class_of_device=26,4,8 \
-    persist.bluetooth.leaudio_offload.disabled=false \
-    persist.bluetooth.leaudio.bypass_allow_list=true \
-    bluetooth.leaudio.dual_bidirection_swb.supported=true \
-    persist.bluetooth.leaudio.notify.idle.during.call=true \
-    persist.vendor.bluetooth.haltest=true \
+    persist.bluetooth.leaudio_offload.disabled=true \
+    persist.bluetooth.leaudio.bypass_allow_list=false \
+    bluetooth.leaudio.dual_bidirection_swb.supported=false \
+    persist.bluetooth.leaudio.notify.idle.during.call=false \
+    persist.vendor.bluetooth.haltest=false \
     bluetooth.core.le.max_number_of_concurrent_connections=10
+
+# Set max connected audio devices as 1
+PRODUCT_PRODUCT_PROPERTIES += \
+    persist.bluetooth.maxconnectedaudiodevices=1
+PRODUCT_PRODUCT_PROPERTIES += \
+    bluetooth.gatt.over_bredr.enabled=false
 
 ifneq ($(TARGET_HAS_LOW_RAM), true)
 #PRODUCT_PACKAGES += Xpan
