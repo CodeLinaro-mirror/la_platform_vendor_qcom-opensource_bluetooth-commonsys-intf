@@ -14,7 +14,26 @@ endif #TARGET_FWK_SUPPORTS_FULL_VALUEADDS
 ifeq ($(BOARD_HAVE_BLUETOOTH_QCOM),true)
 PRODUCT_PACKAGES += Bluetooth
 
-ifneq ($(TARGET_BOARD_TYPE),auto)
+TARGET_NAME +=$(TARGET_BOARD_PLATFORM)$(TARGET_BOARD_SUFFIX)
+ifeq ($(TARGET_NAME),qssi)
+  # Set supported Bluetooth profiles to enabled
+  PRODUCT_PRODUCT_PROPERTIES += \
+    bluetooth.profile.a2dp.source.enabled=false \
+    bluetooth.profile.avrcp.target.enabled=true \
+    bluetooth.profile.avrcp.controller.enabled=true \
+    bluetooth.profile.hfp.ag.enabled=false \
+    bluetooth.profile.asha.central.enabled=true \
+    bluetooth.profile.gatt.enabled=true \
+    bluetooth.profile.hid.host.enabled=true \
+    bluetooth.profile.hid.device.enabled=true \
+    bluetooth.profile.map.server.enabled=false \
+    bluetooth.profile.opp.enabled=true \
+    bluetooth.profile.pan.nap.enabled=true \
+    bluetooth.profile.pan.panu.enabled=true \
+    bluetooth.profile.pbap.server.enabled=false
+
+  PRODUCT_SYSTEM_EXT_PROPERTIES += bluetooth.profile.sap.server.enabled=true
+else ifneq ($(TARGET_BOARD_TYPE),auto)
 # Set supported Bluetooth profiles to enabled
 PRODUCT_PRODUCT_PROPERTIES += \
     bluetooth.profile.a2dp.source.enabled=true \
@@ -76,9 +95,12 @@ endif #TARGET_HAS_LOW_RAM
 
 # Enable A2DP Sink by default
 # Enable HFP CLIENT by default
+# Setting sink and source role properties
 PRODUCT_PRODUCT_PROPERTIES += \
   persist.vendor.service.bt.a2dp.sink=true \
-  persist.vendor.service.bt.hfp.client=true
+  persist.vendor.service.bt.hfp.client=true \
+  persist.vendor.service.bt.sink.role.enabled=true \
+  persist.vendor.service.bt.source.role.enabled=false
 
 else
 #PRODUCT_SOONG_NAMESPACES += packages/modules/Bluetooth/android/app
