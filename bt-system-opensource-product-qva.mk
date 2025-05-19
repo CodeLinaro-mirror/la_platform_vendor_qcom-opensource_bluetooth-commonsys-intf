@@ -8,3 +8,13 @@ PRODUCT_PRODUCT_PROPERTIES += \
 # Enable Hid Host (BR/EDR) and HOGP
 PRODUCT_PRODUCT_PROPERTIES += \
     bluetooth.profile.hid.host.enabled=true
+
+ifeq ($(BOARD_HAVE_DUAL_BLUETOOTH), true)
+PRODUCT_PRODUCT_PROPERTIES += \
+    persist.bluetooth.dual_bt=false \
+    persist.bluetooth.dual_adapter_mode=true
+
+PRODUCT_PRODUCT_PROPERTIES += \
+    bluetooth.profile.a2dp.source.enabled=true \
+    bluetooth.profile.avrcp.target.enabled=true
+endif
