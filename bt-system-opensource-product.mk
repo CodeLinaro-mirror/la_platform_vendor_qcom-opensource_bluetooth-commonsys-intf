@@ -55,6 +55,10 @@ ifneq ($(TARGET_HAS_LOW_RAM), true)
 PRODUCT_PACKAGES_DEBUG += BTTestApp
 endif #TARGET_HAS_LOW_RAM
 
+# Enable PBAP CLIENT by default
+PRODUCT_PRODUCT_PROPERTIES += \
+  persist.vendor.service.bt.pbap.client=true
+
 else
 PRODUCT_SOONG_NAMESPACES += packages/apps/Bluetooth
 PRODUCT_PACKAGE_OVERLAYS += vendor/qcom/opensource/commonsys-intf/bluetooth/overlay/generic
