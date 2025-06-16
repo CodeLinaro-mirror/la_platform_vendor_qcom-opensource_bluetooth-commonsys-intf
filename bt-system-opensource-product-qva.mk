@@ -8,6 +8,9 @@ PRODUCT_PRODUCT_PROPERTIES += \
 # Enable Hid Host (BR/EDR) and HOGP
 PRODUCT_PRODUCT_PROPERTIES += \
     bluetooth.profile.hid.host.enabled=true
+# Set start timeout default value as 4000ms
+PRODUCT_PRODUCT_PROPERTIES += \
+    bluetooth.gd.start_timeout=4000
 
 ifeq ($(BOARD_HAVE_DUAL_BLUETOOTH), true)
 PRODUCT_PRODUCT_PROPERTIES += \
