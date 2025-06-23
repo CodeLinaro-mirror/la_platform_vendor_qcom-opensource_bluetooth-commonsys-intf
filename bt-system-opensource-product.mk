@@ -23,7 +23,7 @@ PRODUCT_PRODUCT_PROPERTIES += \
     bluetooth.profile.hfp.ag.enabled=true \
     bluetooth.profile.gatt.enabled=true \
     bluetooth.profile.hid.host.enabled=true \
-    bluetooth.profile.hid.device.enabled=true \
+    bluetooth.profile.hid.device.enabled=false \
     bluetooth.profile.map.server.enabled=true \
     bluetooth.profile.opp.enabled=true \
     bluetooth.profile.pan.nap.enabled=true \
@@ -44,11 +44,14 @@ PRODUCT_SYSTEM_EXT_PROPERTIES += \
     persist.bluetooth.leaudio.bypass_allow_list=true \
     bluetooth.leaudio.dual_bidirection_swb.supported=true \
     persist.bluetooth.leaudio.notify.idle.during.call=true \
-    persist.vendor.bluetooth.haltest=true
+    persist.vendor.bluetooth.haltest=true \
+    bluetooth.core.le.max_number_of_concurrent_connections=10
 
 ifneq ($(TARGET_HAS_LOW_RAM), true)
 PRODUCT_PACKAGES += Xpan
 PRODUCT_PACKAGES += privapp-permission-xpan.xml
+PRODUCT_PACKAGES += ChannelSoundingTestApp
+PRODUCT_PACKAGES += com.android.bluetooth.channelsoundingtestapp.xml
 endif #TARGET_HAS_LOW_RAM
 
 endif #TARGET_BOARD_TYPE
