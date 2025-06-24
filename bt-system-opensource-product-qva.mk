@@ -14,10 +14,11 @@ PRODUCT_PRODUCT_PROPERTIES += \
 
 ifeq ($(BOARD_HAVE_DUAL_BLUETOOTH), true)
 PRODUCT_PRODUCT_PROPERTIES += \
-    persist.bluetooth.dual_bt=false \
+    persist.bluetooth.dual_bt=true \
     persist.bluetooth.dual_adapter_mode=true
 
 PRODUCT_PRODUCT_PROPERTIES += \
+    bluetooth.profile.hfp.ag.enabled=true \
     bluetooth.profile.a2dp.source.enabled=true \
     bluetooth.profile.avrcp.target.enabled=true
 endif
