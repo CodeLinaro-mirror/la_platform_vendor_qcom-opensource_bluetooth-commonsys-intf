@@ -95,10 +95,13 @@ endif #TARGET_HAS_LOW_RAM
 
 # Enable A2DP Sink by default
 # Enable HFP CLIENT by default
+# Enable MAP CLIENT and PBAP CLIENT by default
 # Setting sink and source role properties
 PRODUCT_PRODUCT_PROPERTIES += \
   persist.vendor.service.bt.a2dp.sink=true \
   persist.vendor.service.bt.hfp.client=true \
+  persist.vendor.service.bt.map.client=true \
+  persist.vendor.service.bt.pbap.client=true \
   persist.vendor.service.bt.sink.role.enabled=true \
   persist.vendor.service.bt.source.role.enabled=false
 
