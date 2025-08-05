@@ -12,6 +12,7 @@ endif #TARGET_FWK_SUPPORTS_FULL_VALUEADDS
 
 #BT
 ifeq ($(BOARD_HAVE_BLUETOOTH_QCOM),true)
+PRODUCT_PACKAGES += BHSApp
 PRODUCT_PACKAGES += Bluetooth
 
 TARGET_NAME +=$(TARGET_BOARD_PLATFORM)$(TARGET_BOARD_SUFFIX)
@@ -47,6 +48,8 @@ else ifneq ($(TARGET_BOARD_TYPE),auto)
   PRODUCT_SYSTEM_EXT_PROPERTIES += bluetooth.profile.sap.server.enabled=true
   PRODUCT_SYSTEM_EXT_PROPERTIES += bluetooth.profile.pbap.server.enabled=true
   PRODUCT_SYSTEM_EXT_PROPERTIES += bluetooth.profile.map.server.enabled=true
+  PRODUCT_SYSTEM_EXT_PROPERTIES += bluetooth.profile.hfp.ag.enabled=true
+  PRODUCT_SYSTEM_EXT_PROPERTIES += bluetooth.profile.a2dp.source.enabled=true
 endif #TARGET_BOARD_TYPE
 
 ifeq ($(TARGET_FWK_SUPPORTS_FULL_VALUEADDS), true)
