@@ -21,4 +21,15 @@ PRODUCT_PRODUCT_PROPERTIES += \
     bluetooth.profile.hfp.ag.enabled=true \
     bluetooth.profile.a2dp.source.enabled=true \
     bluetooth.profile.avrcp.target.enabled=true
+else
+PRODUCT_PRODUCT_PROPERTIES += \
+    persist.bluetooth.dual_bt=false \
+    persist.bluetooth.dual_adapter_mode=false
+
+ifeq ($(TARGET_BOARD_TYPE),auto)
+PRODUCT_PRODUCT_PROPERTIES += \
+    bluetooth.profile.hfp.ag.enabled=false \
+    bluetooth.profile.a2dp.source.enabled=false \
+    bluetooth.profile.avrcp.target.enabled=false
+endif
 endif
