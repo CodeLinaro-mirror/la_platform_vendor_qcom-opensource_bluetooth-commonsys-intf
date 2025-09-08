@@ -33,10 +33,8 @@ ifeq ($(TARGET_NAME),qssi_lite)
   PRODUCT_SYSTEM_EXT_PROPERTIES += bluetooth.profile.sap.server.enabled=true
 else ifneq ($(TARGET_BOARD_TYPE),auto)
   PRODUCT_PRODUCT_PROPERTIES += \
-      bluetooth.profile.a2dp.source.enabled=true \
       bluetooth.profile.avrcp.target.enabled=true \
       bluetooth.profile.avrcp.controller.enabled=true \
-      bluetooth.profile.hfp.ag.enabled=true \
       bluetooth.profile.asha.central.enabled=true \
       bluetooth.profile.gatt.enabled=true \
       bluetooth.profile.hid.host.enabled=true \
