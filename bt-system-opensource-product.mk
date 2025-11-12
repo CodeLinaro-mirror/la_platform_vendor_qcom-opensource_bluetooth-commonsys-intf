@@ -44,6 +44,7 @@ else ifneq ($(TARGET_BOARD_TYPE),auto)
 
   PRODUCT_SYSTEM_EXT_PROPERTIES += bluetooth.profile.sap.server.enabled=true
   PRODUCT_SYSTEM_EXT_PROPERTIES += bluetooth.profile.pbap.server.enabled=true
+  PRODUCT_SYSTEM_EXT_PROPERTIES += bluetooth.profile.pbap.client.enabled=false
   PRODUCT_SYSTEM_EXT_PROPERTIES += bluetooth.profile.map.server.enabled=true
   PRODUCT_SYSTEM_EXT_PROPERTIES += bluetooth.profile.hfp.ag.enabled=true
   PRODUCT_SYSTEM_EXT_PROPERTIES += bluetooth.profile.a2dp.source.enabled=true
