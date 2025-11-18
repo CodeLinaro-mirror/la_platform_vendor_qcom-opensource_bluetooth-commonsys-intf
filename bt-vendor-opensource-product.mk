@@ -98,7 +98,7 @@ PRODUCT_PACKAGES += vendor.qti.hardware.wipower@1.0-impl
 endif #BOARD_USES_WIPOWER
 
 ifeq ($(TARGET_BOARD_TYPE),auto)
-ifeq ($(BOARD_HAVE_QCOM_BLE_AUDIO),true)
+ifeq ($(BOARD_HAVE_QCOM_BLE_AUDIO_W),true)
 # Enable BLE Audio profile in AUTO
 PRODUCT_PROPERTY_OVERRIDES +=  \
     bluetooth.profile.bap.broadcast.assist.enabled=true \
