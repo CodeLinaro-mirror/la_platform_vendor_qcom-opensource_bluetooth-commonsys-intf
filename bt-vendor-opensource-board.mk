@@ -126,3 +126,13 @@ endif
 endif
 endif
 endif
+
+ifeq ($(TARGET_FWK_SUPPORTS_FULL_VALUEADDS),true)
+ifeq ($(TARGET_BOARD_TYPE),auto)
+ifeq ($(ENABLE_HYP),true)
+ifeq ($(TARGET_USE_QTI_BT_AIDL),true)
+BOARD_HAVE_DUAL_BLUETOOTH := true
+endif
+endif
+endif
+endif
