@@ -39,6 +39,7 @@ PRODUCT_PACKAGES += android.hardware.bluetooth@1.0-impl-qti
 PRODUCT_PACKAGES += vendor.qti.hardware.bluetooth_audio@2.0-impl
 PRODUCT_PACKAGES += vendor.qti.hardware.bluetooth_audio@2.1-impl
 PRODUCT_PACKAGES += android.hardware.bluetooth.a2dp@2.0-impl
+PRODUCT_PACKAGES += android.hardware.bluetooth.audio-impl
 PRODUCT_PACKAGES += com.qualcomm.qti.bluetooth_audio@1.0.vendor
 PRODUCT_PACKAGES += vendor.qti.hardware.bluetooth_audio@2.0.vendor
 PRODUCT_PACKAGES += vendor.qti.hardware.bluetooth_audio@2.1.vendor
