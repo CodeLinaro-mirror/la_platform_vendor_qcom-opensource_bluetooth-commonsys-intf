@@ -17,6 +17,7 @@ ifeq ($(TARGET_USE_QTI_BT_AIDL), true)
 PRODUCT_PACKAGES += android.hardware.bluetooth-service-qti
 PRODUCT_PACKAGES += android.hardware.bluetooth-service-qti.rc
 PRODUCT_PACKAGES += android.hardware.bluetooth-impl-qti
+QC_PATHS := vendor/qcom/proprietary
 ifeq ($(BOARD_HAVE_DUAL_BLUETOOTH),true)
 PRODUCT_PACKAGES += android.hardware.bluetooth-service-qti1
 PRODUCT_PACKAGES += android.hardware.bluetooth-service-qti1.rc
