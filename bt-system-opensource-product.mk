@@ -55,19 +55,27 @@ ifneq ($(TARGET_HAS_LOW_RAM), true)
 PRODUCT_PACKAGES_DEBUG += BTTestApp
 endif #TARGET_HAS_LOW_RAM
 
-# Enable PBAP CLIENT by default
+# Enable A2DP Sink by default
+# Enable HFP CLIENT by default
+# Enable MAP CLIENT and PBAP CLIENT by default
+# Setting sink and source role properties
 PRODUCT_PRODUCT_PROPERTIES += \
-  persist.vendor.service.bt.pbap.client=true
+  persist.vendor.service.bt.a2dp.sink=true \
+  persist.vendor.service.bt.hfp.client=true \
+  persist.vendor.service.bt.map.client=true \
+  persist.vendor.service.bt.pbap.client=true \
+  persist.vendor.service.bt.sink.role.enabled=true \
+  persist.vendor.service.bt.source.role.enabled=false
 
 else
-PRODUCT_SOONG_NAMESPACES += packages/apps/Bluetooth
-PRODUCT_PACKAGE_OVERLAYS += vendor/qcom/opensource/commonsys-intf/bluetooth/overlay/generic
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := vendor/qcom/opensource/commonsys-intf/bluetooth/build/generic/config
+#PRODUCT_SOONG_NAMESPACES += packages/apps/Bluetooth
+#PRODUCT_PACKAGE_OVERLAYS += vendor/qcom/opensource/commonsys-intf/bluetooth/overlay/generic
+#BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := vendor/qcom/opensource/commonsys-intf/bluetooth/build/generic/config
 endif #TARGET_USE_QTI_BT_STACK
 
 else
-PRODUCT_PACKAGE_OVERLAYS += vendor/qcom/opensource/commonsys-intf/bluetooth/overlay/generic
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := vendor/qcom/opensource/commonsys-intf/bluetooth/build/generic/config
+#PRODUCT_PACKAGE_OVERLAYS += vendor/qcom/opensource/commonsys-intf/bluetooth/overlay/generic
+#BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := vendor/qcom/opensource/commonsys-intf/bluetooth/build/generic/config
 endif #TARGET_FWK_SUPPORTS_FULL_VALUEADDS
 
 endif #BOARD_HAVE_BLUETOOTH_QCOM
