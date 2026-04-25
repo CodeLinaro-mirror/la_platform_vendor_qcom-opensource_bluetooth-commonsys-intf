@@ -22,3 +22,8 @@ PRODUCT_PRODUCT_PROPERTIES += \
     bluetooth.profile.a2dp.source.enabled=true \
     bluetooth.profile.avrcp.target.enabled=true
 endif
+
+# Set LE inquiry scan duty cycle to 1/10
+PRODUCT_PRODUCT_PROPERTIES += \
+    bluetooth.core.le.inquiry_scan_window=16 \
+    bluetooth.core.le.inquiry_scan_interval=160
